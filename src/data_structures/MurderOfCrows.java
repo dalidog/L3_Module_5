@@ -24,12 +24,19 @@ public class MurderOfCrows {
     }
 
     private void findTheDiamond() {
+    	System.out.println("hi");
         /*
          * 1. One of the Crows has eaten the diamond. You need to search through the stomach of each Crow, 
          * then print the name of the guilty Crow.
          */
         
         /* 2. How many innocent crows had to die before the diamond was found? */
+    	for (int i = 0; i < theMurder.size(); i++) {
+			ArrayList<String> x =theMurder.get(i).getStomachContents();
+			if(x.get(i) == "diamond") {
+		System.out.println(theMurder.get(i));
+			}
+		}
         
     }
 
