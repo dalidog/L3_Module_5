@@ -20,7 +20,36 @@ public class TestMatchingBrackets {
 
 	// USE A STACK TO COMPLETE THE METHOD FOR CHECKING IF EVERY OPENING BRACKET HAS A MATCHING CLOSING BRACKET
 	private boolean doBracketsMatch(String b) {
-		return false;
-	}
+		Stack <Integer> s = new Stack <Integer>();
+		for (int i = 0; i < b.length(); i++) {
 
+			if(Character.toString(b.charAt(i)).equals("{")) {
+				s.push(1);
+				
+			}
+			else {
+				if(s.size()!= 0){
+					s.pop();
+				
+				}
+				else {
+					System.out.println("You have a rogue bracket!!!!!");
+					return false;
+				}
+			}
+		}
+	
+	
+
+if(s.size() == 0) {
+	System.out.println("ur all good");
+	return true;
+}
+else {
+	System.out.println("You have a rogue bracket!!!!!");
+	return false;
+}
+}
+
+	
 }
